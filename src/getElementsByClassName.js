@@ -6,8 +6,6 @@ var getElementsByClassName = function(className) {
   // create functoin to check DOM elements to be called recursively
   function checkDOM(el){
 
-    console.log(el.childNodes,el.classList)
-
     // check if the classList for the provided node is undefined
     if(el.classList !== undefined){
       // check if the classList contains the className we are looking for
