@@ -17,6 +17,17 @@ var stringifyJSON = function(obj) {
       return '['+parsedArr.join(',')+']'
     }
 
+    else if( obj === Object(obj) ){
+
+      var parsedObj = []
+
+      for( var prop in obj){
+        parsedObj.push(stringifyJSON(prop)+':'+stringifyJSON(obj[prop]))
+      }
+
+      return '{'+parsedObj.join(',')+'}'
+    }
+
   } else if( typeof obj == 'number' ){
 
     return obj.toString()
